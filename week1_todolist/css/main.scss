@@ -1,0 +1,359 @@
+//顏色的定義
+$color-main: #4a90e2;
+$color-main-dark: #00408b;
+$color-danger: #d0021b;
+$color-star: #f5a623;
+$color-item-important: #fff2dc;
+$color-item: #f2f2f2;
+$color-gray: #c8c8c8;
+$color-gray-dark: #757575;
+$color-gray-median: #e1e1e1;
+$color-white: #ffffff;
+$color-black: #000000;
+$color-shadow-blue:#76abd9;
+$color-delete:#9B9B9B;
+
+$font-regular:'Roboto Regular',sans-serif;
+$font-medium:'Roboto Medium',sans-serif;
+
+//字型的Class
+.font-title{
+  font-size:17px;
+  font-weight: 500;
+  font-style: normal;
+  font-family:$font-medium;
+}
+
+.font-subtitle{
+  font-size:20px;
+  font-weight: 500;
+  font-style: normal;
+  font-family:$font-medium;
+}
+
+.font-paragraph{
+  font-size:16px;
+  font-weight: 400;
+  font-style: normal;
+  font-family:$font-regular;
+}
+
+.font-remark,.font-placeholder{
+  font-size:16px;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-status{
+  font-size:24px;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.font-complate{
+  text-decoration:line-through;
+  font-size:17px;
+  font-weight: 400;
+  font-style: italic;
+  color:$color-delete;
+}
+
+.font-button{
+  font-size:17px;
+  font-family:$font-regular;
+}
+
+.color-dark-gray{
+  color:$color-gray-dark;
+}
+
+.font-checkbox{
+  margin-left:48px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-container {
+  background-color: $color-main;
+}
+
+.menu {
+  margin: 0 auto;
+  padding: 0;
+  overflow: auto;
+  display: flex;
+  height: 76px;
+}
+.menu-item {
+  flex-grow: 1;
+  float: left;
+  text-align: center;
+  line-height: 76px;
+  span {
+    color: $color-main-dark;
+    font-size: 17px;
+    display: inline-block;
+    height: 76px;
+    transition: 0.3s;
+  }
+  span:hover {
+    border-bottom: 5px solid $color-main-dark;
+    color: $color-white;
+  }
+
+  &.active {
+    span {
+      border-bottom: 5px solid $color-main-dark;
+      color: $color-white;
+      font-family:$font-medium;
+    }
+  }
+}
+
+.list-container {
+  margin: 24px 20px 0px 20px;
+}
+
+.list-item {
+  &.list-item-add {
+    height: 65px;
+    border: 2px solid $color-gray;
+    border-radius: 5px;
+    background-color: $color-white;
+    color: $color-gray;
+    &::before {
+      content: attr(placeholder);
+      line-height: 65px;
+      font-size: 17px;
+      margin-left: 15px;
+      font-family:$font-regular;
+    }
+  }
+}
+
+.list-item-edit-block{
+  margin-top:22px;
+  margin-bottom:24px;
+  border-radius:5px;
+  box-shadow: 4px 0px 2px 0px #EEEEEE;
+  //box-shadow:0 0.25rem 0.75rem rgba(0, 0, 0, .05);
+  background-color:$color-item;
+}
+.list-item{
+  line-height:76px;
+  display: flex;
+  background-color:$color-item;
+  &.important{
+    background-color:$color-item-important;
+  }
+}
+
+.list-item-block{
+  margin-bottom:8px;
+  border-radius:5px;
+}
+.edit-title{
+  border-radius:5px 5px 0px 0px;
+  border-bottom:3px solid $color-gray;
+}
+.edit-body{
+  height:440px;
+}
+
+.list-item-chackbox{
+  display:block;
+  cursor:pointer;
+  width:24px;
+  height:24px;
+  top: 24px;
+  left: 32px;
+  bottom: 28px;
+  position:relative;
+  input{
+    position:absolute;
+    z-index:-1;
+    opacity:0;
+  }
+}
+
+.checkbox-display{
+  position:relative;
+  height:24px;
+  width:24px;
+  background:$color-white;
+  input:not([disabled]):checked ~ &{
+    background:$color-main;
+  }
+  // Hide default browser input
+  &:after{
+    content:'';
+    position:absolute;
+    display:none;
+    .list-item-chackbox input:checked ~ &{
+      display:block; // Show check
+    }
+    //checkbox的勾勾
+    .list-item-chackbox &{
+      left:8px;
+      top:4px;
+      width:5px;
+      height:10px;
+      border:solid $color-white;
+      border-width:0 2px 2px 0;
+      transform:rotate(45deg);
+    }
+  }
+}
+
+.edit-body{
+  margin-left:32px;
+}
+.form-label{
+  margin-top:23px;
+.font-subtitle{
+  .far{
+    margin-right:9px;
+  } 
+}
+}
+.form-editor{
+  margin-left:23px;
+  margin-top:8px;
+  .form-control{
+  font-size:16px;
+  border:none;
+  line-height:16px;
+  padding-top:4px;
+  padding-bottom:4px;
+  padding-left:16px;
+  margin-right:8px;
+  }
+input{
+  height:35px;
+  width:162px;
+}
+
+.form-control:focus, button:focus {
+    background-image: none;
+    background-position: 50% 50%;
+    border-color: $color-shadow-blue;
+    -webkit-box-shadow: 0 0 7px 0 $color-shadow-blue;
+    box-shadow: 0 0 7px 0 $color-shadow-blue;
+}
+}
+.star{
+  &.active{
+    color:$color-star;
+  }
+}
+
+.pen{
+  &.active{
+    color:$color-main;
+  }
+}
+
+.list-item-icon{
+  text-align:right;
+  flex-grow: 1;
+  i{
+    margin-right:32px;
+    font-size:17px;
+    line-height:76px;
+  }
+}
+
+#file-upload-button{
+  color:white;
+  font-size:24px; 
+  width:32px; 
+  height:32px;
+  border:none;
+}
+.d-none{
+  display:none;
+}
+
+.d-flex{
+  display:flex;
+}
+
+#file-info{
+  padding-right:23px;
+}
+textarea{
+  resize: none;
+  max-width:445px;
+  height:120px;
+}
+.btn{
+  border:none;
+  flex-grow: 1;
+  &.btn-cancel{
+    background:$color-white;
+    color:$color-danger;
+  }
+  &.btn-add{
+    background:$color-main;
+    color:$color-white;
+  }
+}
+@media (min-width: 1200px) {
+  .menu {
+    max-width: 1140px;
+  }
+}
+
+@media (min-width: 768px) {
+  .menu {
+    max-width: 660px;
+  }
+  .menu-item {
+    width: 220px;
+    span {
+      width: 160px;
+      &.font-title{
+          font-size: 24px;
+      }
+    }
+  }
+  .list-container {
+    width: 620px;
+    margin: 24px auto 0px auto;
+  }
+  .font-title{
+    font-size:24px;
+  }
+  .list-item-icon{
+    i{
+        font-size:24px;
+    }
+  }
+  .item-file{
+    display:flex;
+  }
+  .edit-body {
+    margin-left: 72px;
+  }
+  textarea{
+    width:445px;
+  }
+  .font-button{
+    font-size:24px;
+  }
+  .list-item {
+  &.list-item-add {
+    &::before {
+      font-size: 24px;
+    }
+  }
+   .font-complate{
+     font-size:24px;
+    }
+}
+ 
+}
